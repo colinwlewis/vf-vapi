@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
 
 app.use('/api', router)
 
-export function startServer() {
-  app.listen(port, host, () => {
-    console.log(`[ ready ] http://${host}:${port}`)
+const port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', () => {
+  console.log(`[ ready ] Server is running on port ${port}`);
   })
 }
 
